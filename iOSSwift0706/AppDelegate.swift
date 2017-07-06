@@ -13,14 +13,14 @@ import MobileCenterCrashes
 import MobileCenterPush
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MSPushDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        MSPush.setDelegate(self);
         MSMobileCenter.start("f8012f19-2eb8-4d04-b92a-9ffba317434b", withServices:[
             MSAnalytics.self,
             MSCrashes.self,
@@ -28,6 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
         
         return true
+    }
+    
+    func push(_ push: MSPush!, didReceive pushNotification: MSPushNotification!) {
+        var message: String = pushNotification.message
+        for item in pushNotification.customData {
+            message = String(format: "%@\n%@: %@", message, item.key, item.value)
+        }
+        let alert = UIAlertView(title: pushNotification.title, message: message, delegate: self, cancelButtonTitle: "OK")
+        alert.show()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

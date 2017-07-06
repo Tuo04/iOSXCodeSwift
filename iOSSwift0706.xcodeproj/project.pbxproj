@@ -43,6 +43,7 @@
 		44BAB1134DF732698452C948 /* Pods-iOSSwift0706Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSwift0706Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSwift0706Tests/Pods-iOSSwift0706Tests.release.xcconfig"; sourceTree = "<group>"; };
 		46B535578AE39BF26D75CE11 /* Pods-iOSSwift0706Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSwift0706Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSwift0706Tests/Pods-iOSSwift0706Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		49FF3A4AB799CB2EA3164AA2 /* Pods-iOSSwift0706UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSwift0706UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSwift0706UITests/Pods-iOSSwift0706UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A186C3A1F0E0AFA00BDD346 /* iOSSwift0706.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSSwift0706.entitlements; sourceTree = "<group>"; };
 		4A44B5C01F0E020A00845C15 /* iOSSwift0706.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSwift0706.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A44B5C31F0E020A00845C15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A44B5C51F0E020A00845C15 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		4A44B5C21F0E020A00845C15 /* iOSSwift0706 */ = {
 			isa = PBXGroup;
 			children = (
+				4A186C3A1F0E0AFA00BDD346 /* iOSSwift0706.entitlements */,
 				4A44B5C31F0E020A00845C15 /* AppDelegate.swift */,
 				4A44B5C51F0E020A00845C15 /* FirstViewController.swift */,
 				4A44B5C71F0E020A00845C15 /* SecondViewController.swift */,
@@ -247,6 +249,14 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 3D27XEAVGH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					4A44B5D51F0E020A00845C15 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -609,6 +619,7 @@
 			baseConfigurationReference = 36E46910EF1B36B7BC28B70D /* Pods-iOSSwift0706.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSSwift0706/iOSSwift0706.entitlements;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
 				INFOPLIST_FILE = iOSSwift0706/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -623,6 +634,7 @@
 			baseConfigurationReference = FA62FF0DA0B21FA0F1BAECB9 /* Pods-iOSSwift0706.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSSwift0706/iOSSwift0706.entitlements;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
 				INFOPLIST_FILE = iOSSwift0706/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -713,6 +725,7 @@
 				4A44B5EC1F0E020A00845C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A44B5ED1F0E020A00845C15 /* Build configuration list for PBXNativeTarget "iOSSwift0706Tests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +734,7 @@
 				4A44B5EF1F0E020A00845C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A44B5F01F0E020A00845C15 /* Build configuration list for PBXNativeTarget "iOSSwift0706UITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +743,7 @@
 				4A44B5F21F0E020A00845C15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
